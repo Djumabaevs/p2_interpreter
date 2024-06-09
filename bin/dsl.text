@@ -1,0 +1,13 @@
+program ::= statement*
+statement ::= assignment | if_statement | while_statement | print_statement
+assignment ::= identifier "=" expression ";"
+if_statement ::= "if" "(" expression ")" "{" statement* "}"
+while_statement ::= "while" "(" expression ")" "{" statement* "}"
+print_statement ::= "print" "(" expression ")" ";"
+expression ::= term (("+" | "-") term)*
+term ::= factor (("*" | "/") factor)*
+factor ::= number | identifier | "(" expression ")"
+number ::= digit+
+identifier ::= letter (letter | digit)*
+letter ::= "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
+digit ::= "0" | "1" | ... | "9"
